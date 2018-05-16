@@ -1,0 +1,1 @@
+insert into categories values (null,"Sports","ext/13-sports","12",'{"info": "Chrome favorites in sports extensions", "title": "Our Top Picks", "photo_url": "/category/hot_picks/top_picks_sports.png"}')
