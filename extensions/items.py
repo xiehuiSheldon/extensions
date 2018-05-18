@@ -14,6 +14,8 @@ class PosterItem(scrapy.Item):
     poster_path = scrapy.Field()
     ext_id = scrapy.Field()
     weight = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
 
 
 class CategoryItem(scrapy.Item):

@@ -45,6 +45,7 @@ class MySQLAsyncPipeline:
         tx.execute(sql, values)
 
     def insert_poster(self, tx, item):
+        '''
         values = (
             item['poster_path'],
             item['weight'],
@@ -52,19 +53,26 @@ class MySQLAsyncPipeline:
         )
         sql = 'insert into posters values (null,%s,%s,%s)'
         tx.execute(sql, values)
+        '''
+        pass
 
     def insert_category(self, tx, item):
-        hot_picks = json.dumps(item['hot_picks'], ensure_ascii=False)
-        hot_picks = re.sub(r"'", r"\'", hot_picks)
-        values = (
-            item['name'],
-            item['code_id'],
-            item['weight'],
-            hot_picks,
-        )
-        sql = 'insert into categories values (null,"%s","%s","%s",\'%s\')'
-        exe_sql = sql % values
-        tx.execute(exe_sql)
+        if 'hot_picks' in item:
+            hot_picks = json.dumps(item['hot_picks'], ensure_ascii=False)
+            hot_picks = re.sub(r"'", r"\'", hot_picks)
+            values = (
+                item['name'],
+                item['code_id'],
+                item['weight'],
+                hot_picks,
+            )
+            sql = 'insert into categories values (null,"%s","%s","%s",\'%s\')'
+            exe_sql = sql % values
+            tx.execute(exe_sql)
+        else:
+            values = (item['name'], item['code_id'], item['weight'])
+            sql = 'insert into categories values (null,"%s","%s","%s",null)'
+            tx.execute(sql, values)
 
     def insert_ext(self, tx, item):
         detail_info = json.dumps(item['detail_info'], ensure_ascii=False)

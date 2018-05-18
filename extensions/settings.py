@@ -19,6 +19,10 @@ MYSQL_PASSWORD = ''
 
 
 ITEM_PIPELINES = {
+    'scrapy.pipelines.images.ImagesPipeline': 1,
     'extensions.pipelines.MySQLAsyncPipeline': 300,
 }
 
+# LOG_FILE = 'tmp/log.txt'
+
+IMAGES_STORE = 'img'

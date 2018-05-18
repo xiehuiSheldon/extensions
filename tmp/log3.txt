@@ -1,0 +1,215 @@
+2018-05-17 11:12:57 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: extensions)
+2018-05-17 11:12:57 [scrapy.utils.log] INFO: Versions: lxml 4.2.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 17.9.0, Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 16:07:46) [MSC v.1900 32 bit (Intel)], pyOpenSSL 17.5.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Windows-7-6.1.7601-SP1
+2018-05-17 11:12:57 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'extensions', 'LOG_FILE': 'tmp/log3.txt', 'NEWSPIDER_MODULE': 'extensions.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['extensions.spiders']}
+2018-05-17 11:12:57 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2018-05-17 11:12:58 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-05-17 11:12:58 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-05-17 11:12:58 [scrapy.middleware] INFO: Enabled item pipelines:
+['extensions.pipelines.MySQLAsyncPipeline']
+2018-05-17 11:12:58 [scrapy.core.engine] INFO: Spider opened
+2018-05-17 11:12:58 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-05-17 11:12:58 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-05-17 11:12:58 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): chrome.google.com
+2018-05-17 11:12:59 [urllib3.connectionpool] DEBUG: https://chrome.google.com:443 "GET /webstore/category/extensions HTTP/1.1" 200 None
+2018-05-17 11:13:00 [chardet.charsetprober] DEBUG: ISO-8859-5 confidence = 0.0010843885008011618, below negative shortcut threshhold 0.05
+2018-05-17 11:13:00 [chardet.charsetprober] DEBUG: MacCyrillic confidence = 0.0316881648899135, below negative shortcut threshhold 0.05
+2018-05-17 11:13:00 [chardet.charsetprober] DEBUG: ISO-8859-5 confidence = 0.001040548191658394, below negative shortcut threshhold 0.05
+2018-05-17 11:13:00 [chardet.charsetprober] DEBUG: windows-1255 confidence = 0.0, below negative shortcut threshhold 0.05
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: windows-1255 confidence = 0.0, below negative shortcut threshhold 0.05
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: utf-8  confidence = 0.99
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: SHIFT_JIS Japanese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: EUC-JP Japanese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: GB2312 Chinese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: EUC-KR Korean confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: CP949 Korean confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: Big5 Chinese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: EUC-TW Taiwan confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: windows-1251 Russian confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: KOI8-R Russian confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: ISO-8859-5 not active
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: MacCyrillic not active
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: IBM866 Russian confidence = 0.08314592093103378
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: IBM855 Russian confidence = 0.06703388520505617
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: ISO-8859-7 Greek confidence = 0.0
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: windows-1253 Greek confidence = 0.0
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: ISO-8859-5 not active
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: windows-1251 Bulgarian confidence = 0.0
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: TIS-620 Thai confidence = 0.062360749567610015
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: ISO-8859-9 Turkish confidence = 0.3264125953586939
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: windows-1255 Hebrew confidence = 0.0
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: windows-1255 not active
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: windows-1255 not active
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: utf-8  confidence = 0.99
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: SHIFT_JIS Japanese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: EUC-JP Japanese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: GB2312 Chinese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: EUC-KR Korean confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: CP949 Korean confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: Big5 Chinese confidence = 0.01
+2018-05-17 11:13:01 [chardet.charsetprober] DEBUG: EUC-TW Taiwan confidence = 0.01
+2018-05-17 11:13:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://chrome.google.com/robots.txt> (referer: None)
+2018-05-17 11:13:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://chrome.google.com/robots.txt> (referer: None)
+2018-05-17 11:13:03 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/robots.txt>
+{'code_id': '15-by-google', 'name': 'Google 产品', 'weight': 1}
+2018-05-17 11:13:04 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2F3p_accessibility_extensions&sortBy=0&container=CHROME&_reqid=127286&rt=j> (referer: None)
+2018-05-17 11:13:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2F3p_accessibility_extensions&sortBy=0&container=CHROME&_reqid=127286&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/0Dsyb1evvH9A72NdKq4dtloxieWasqPgJDcHdFed0zAYcbUeCImpJhdrnc3BZrWqYEAqhQlhL48=w700-h140-e365'}
+2018-05-17 11:13:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2F3p_accessibility_extensions&sortBy=0&container=CHROME&_reqid=127286&rt=j>
+{'code_id': '22-accessibility',
+ 'hot_picks': {'info': '调整 Chrome 以满足您的需求',
+               'photo_color': '#212121',
+               'photo_url': '/category/hot_picks/3p_accessibility_extensions.png',
+               'title': '无障碍扩展程序'},
+ 'name': '无障碍',
+ 'weight': 9}
+2018-05-17 11:13:05 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_news&sortBy=0&container=CHROME&_reqid=206629&rt=j> (referer: None)
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_news&sortBy=0&container=CHROME&_reqid=206629&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/PQ_kZ95ZUVEq83TdFLatw6ruOxjyL7XtsfKN_AzpGZKt0FzjtqhH3OWW3LVo-BTVmmPD0l78xw=w700-h140-e365'}
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_news&sortBy=0&container=CHROME&_reqid=206629&rt=j>
+{'code_id': '6-news',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的新闻与天气扩展程序',
+               'photo_color': '#303f9f',
+               'photo_url': '/category/hot_picks/top_picks_news.png',
+               'title': '热门精选'},
+ 'name': '新闻与天气',
+ 'weight': 10}
+2018-05-17 11:13:05 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_blogging&sortBy=0&container=CHROME&_reqid=133217&rt=j> (referer: None)
+2018-05-17 11:13:05 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_sports&sortBy=0&container=CHROME&_reqid=286171&rt=j> (referer: None)
+2018-05-17 11:13:05 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_shopping&sortBy=0&container=CHROME&_reqid=239925&rt=j> (referer: None)
+2018-05-17 11:13:05 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_communication&sortBy=0&container=CHROME&_reqid=265562&rt=j> (referer: None)
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_blogging&sortBy=0&container=CHROME&_reqid=133217&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/RMOw_nFGSSvp_SOsRQ7D3t823mxyVcn8EEsw-JrLza_9PERUXuc4vLdUIE5O5GaT7SsNY5jCM5Y=w700-h140-e365'}
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_blogging&sortBy=0&container=CHROME&_reqid=133217&rt=j>
+{'code_id': '10-blogging',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的博客扩展程序',
+               'photo_color': '#ff5252',
+               'photo_url': '/category/hot_picks/top_picks_blogging.png',
+               'title': '热门精选'},
+ 'name': '博客',
+ 'weight': 2}
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_sports&sortBy=0&container=CHROME&_reqid=286171&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/WcY_mUIeCbe4rPdxuqv5RbVd2N2VRt0I7xD0IgWX3_P4gUV-_OL8656LV4XoLgERbySJOFLW=w700-h140-e365'}
+2018-05-17 11:13:05 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_productivity&sortBy=0&container=CHROME&_reqid=272444&rt=j> (referer: None)
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_sports&sortBy=0&container=CHROME&_reqid=286171&rt=j>
+{'code_id': '13-sports',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的体育扩展程序',
+               'photo_color': '#689f38',
+               'photo_url': '/category/hot_picks/top_picks_sports.png',
+               'title': '热门精选'},
+ 'name': '体育',
+ 'weight': 8}
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_shopping&sortBy=0&container=CHROME&_reqid=239925&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/1OWUKpwgciP0f74EN2iH0udgT_2whmhRH-frxeB2UDItQvvSMInE7lZx3v9UvDj5R1rkYy4g=w700-h140-e365'}
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_communication&sortBy=0&container=CHROME&_reqid=265562&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/qLBEVPJx1xWkFJcHVEq0vsqt3jFsJkUeORqv7gj-tttXRkfvol3Q7QRm2LT3lAkIIUZKs0YxQ1Q=w700-h140-e365'}
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_shopping&sortBy=0&container=CHROME&_reqid=239925&rt=j>
+{'code_id': '12-shopping',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的购物扩展程序',
+               'photo_color': '#ff5252',
+               'photo_url': '/category/hot_picks/top_picks_shopping.png',
+               'title': '热门精选'},
+ 'name': '购物',
+ 'weight': 3}
+2018-05-17 11:13:05 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_fun&sortBy=0&container=CHROME&_reqid=247226&rt=j> (referer: None)
+2018-05-17 11:13:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_communication&sortBy=0&container=CHROME&_reqid=265562&rt=j>
+{'code_id': '1-communication',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的社交与沟通扩展程序',
+               'photo_color': '#4dd0e1',
+               'photo_url': '/category/hot_picks/top_picks_communication.png',
+               'title': '热门精选'},
+ 'name': '社交与通讯',
+ 'weight': 5}
+2018-05-17 11:13:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_productivity&sortBy=0&container=CHROME&_reqid=272444&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/bKmOdv9yfQhx2YeBXU7Or--Yt8LonPqhhzL76fSz1vB9ZEJMfqN7_jBxMhSBgR9VRNsgyTJJnQ=w700-h140-e365'}
+2018-05-17 11:13:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_productivity&sortBy=0&container=CHROME&_reqid=272444&rt=j>
+{'code_id': '7-productivity',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的办公类扩展程序',
+               'photo_color': '#cddc39',
+               'photo_url': '/category/hot_picks/top_picks_productivity.png',
+               'title': '热门精选'},
+ 'name': '生产工具',
+ 'weight': 6}
+2018-05-17 11:13:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_fun&sortBy=0&container=CHROME&_reqid=247226&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/M_KMNauMYurNRzW39fL1tm9H8QbIj3qFW1sLxa0YBOna0OA4aqPbSeHVua7K3la6iPVR9-EW=w700-h140-e365'}
+2018-05-17 11:13:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_fun&sortBy=0&container=CHROME&_reqid=247226&rt=j>
+{'code_id': '14-fun',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的趣味娱乐扩展程序',
+               'photo_color': '#ff6e40',
+               'photo_url': '/category/hot_picks/top_picks_fun.png',
+               'title': '热门精选'},
+ 'name': '娱乐',
+ 'weight': 11}
+2018-05-17 11:13:06 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_photos&sortBy=0&container=CHROME&_reqid=284324&rt=j> (referer: None)
+2018-05-17 11:13:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_photos&sortBy=0&container=CHROME&_reqid=284324&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/l1MRKDvfTAXr5wnAxcwO60SinWdCktxS5TgZyXZcFRPnkjmw103pNolvxRkg8aATUlWjRvL4iQ=w700-h140-e365'}
+2018-05-17 11:13:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_photos&sortBy=0&container=CHROME&_reqid=284324&rt=j>
+{'code_id': '28-photos',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的照片扩展程序',
+               'photo_color': '#4caf50',
+               'photo_url': '/category/hot_picks/top_picks_photos.png',
+               'title': '热门精选'},
+ 'name': '照片',
+ 'weight': 12}
+2018-05-17 11:13:07 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_search-tools&sortBy=0&container=CHROME&_reqid=291068&rt=j> (referer: None)
+2018-05-17 11:13:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_search-tools&sortBy=0&container=CHROME&_reqid=291068&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/u0CqZ32i7CcTxPeeBJWEckNzfcGVhNdEqLg-zFqaBy3ImDSVNmgJffM1ibngksnssgJGIV6XKWY=w700-h140-e365'}
+2018-05-17 11:13:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_search-tools&sortBy=0&container=CHROME&_reqid=291068&rt=j>
+{'code_id': '38-search-tools',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的搜索工具扩展程序',
+               'photo_color': '#ffea00',
+               'photo_url': '/category/hot_picks/top_picks_search-tools.png',
+               'title': '热门精选'},
+ 'name': '搜索工具',
+ 'weight': 7}
+2018-05-17 11:13:07 [scrapy.core.engine] DEBUG: Crawled (200) <POST https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_web-development&sortBy=0&container=CHROME&_reqid=124345&rt=j> (referer: None)
+2018-05-17 11:13:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_web-development&sortBy=0&container=CHROME&_reqid=124345&rt=j>
+{'image_urls': 'https://lh3.googleusercontent.com/6VUPxHUsO43-eQ_uhF1Yq3LP1sdyTLdidswVD-8KUME-qbjL8K9sb2SjzekkVFi-1QprGHKhQ_k=w700-h140-e365'}
+2018-05-17 11:13:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://chrome.google.com/webstore/ajax/item?hl=zh-CN&gl=US&pv=20180301&mce=atf%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac%2Cfcf%2Crma%2Cpot%2Cevt%2Cigb&count=25&token=0%401620439&marquee=true&category=collection%2Ftop_picks_web-development&sortBy=0&container=CHROME&_reqid=124345&rt=j>
+{'code_id': '11-web-development',
+ 'hot_picks': {'info': 'Chrome 网上应用店中备受欢迎的开发者工具扩展程序',
+               'photo_color': '#4dd0e1',
+               'photo_url': '/category/hot_picks/top_picks_web-development.png',
+               'title': '热门精选'},
+ 'name': '开发者工具',
+ 'weight': 4}
+2018-05-17 11:13:07 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-05-17 11:13:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 6067,
+ 'downloader/request_count': 13,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/request_method_count/POST': 11,
+ 'downloader/response_bytes': 186478,
+ 'downloader/response_count': 13,
+ 'downloader/response_status_count/200': 13,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 5, 17, 3, 13, 7, 650998),
+ 'item_scraped_count': 23,
+ 'log_count/DEBUG': 75,
+ 'log_count/INFO': 7,
+ 'response_received_count': 13,
+ 'scheduler/dequeued': 12,
+ 'scheduler/dequeued/memory': 12,
+ 'scheduler/enqueued': 12,
+ 'scheduler/enqueued/memory': 12,
+ 'start_time': datetime.datetime(2018, 5, 17, 3, 12, 58, 101452)}
+2018-05-17 11:13:07 [scrapy.core.engine] INFO: Spider closed (finished)
