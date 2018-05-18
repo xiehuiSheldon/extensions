@@ -9,10 +9,14 @@ class TagItem(scrapy.Item):
     weight = scrapy.Field()
 
 
+class TagsExtensionsItem(scrapy.Item):
+    tag_id = scrapy.Field()
+    ext_code_id = scrapy.Field()
+
+
 class PosterItem(scrapy.Item):
     id = scrapy.Field()
-    poster_path = scrapy.Field()
-    ext_id = scrapy.Field()
+    ext_code_id = scrapy.Field()
     weight = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()

@@ -3,20 +3,20 @@ import re
 import json
 
 from ..items import PosterItem
-
 """
 ###
-×Ü½á¹æÂÉ£º
-1£¬×îºÃµÄ°ì·¨¾ÍÊÇÕÒ @ ·ûºÅ£¬Õû¸öextensionsÖĞ³öÏÖµÄ¾ÍºÜÉÙ
-2£¬µ«ÊÇÄ³Ğ©ÎÄ±¾ÖĞÒ²³öÏÖÁË£¬±ÈÈçÉèÖÃ×ÖÌåºÍÓÊ¼ş£¬ÎªÁËÅÅ³ıÕâĞ©£¬×öÈçÏÂ£º
-3£¬ÉèÁ½¸öÏŞ¶¨£º
-3.1£¬ÕÒµ½ getitemsresponse ¼°ÒÔºó
-3.2£¬ÔÙÔÚ getitemsresponse ÀïÃæÕÒ featured£¬¾Í³öÏÖÁ½´¦ featured
-4£¬¶øÁ½´¦ featured£¬Ò»´¦ÊÇ @ ¸æÖª featured µÄ½áÊøÏŞ¶¨·û£¬Ò»´¦¾ÍÊÇ½áÊøÏŞ¶¨¡£
-Èç´Ë£¬ÕıÔò±í´ïÊ½¾ÍºÃĞ´ÁË¡£
-
+æ€»ç»“è§„å¾‹ï¼š
+1ï¼Œæœ€å¥½çš„åŠæ³•å°±æ˜¯æ‰¾ @ ç¬¦å·ï¼Œæ•´ä¸ªextensionsä¸­å‡ºç°çš„å°±å¾ˆå°‘
+2ï¼Œä½†æ˜¯æŸäº›æ–‡æœ¬ä¸­ä¹Ÿå‡ºç°äº†ï¼Œæ¯”å¦‚è®¾ç½®å­—ä½“å’Œé‚®ä»¶ï¼Œä¸ºäº†æ’é™¤è¿™äº›ï¼Œåšå¦‚ä¸‹ï¼š
+3ï¼Œè®¾ä¸¤ä¸ªé™å®šï¼š
+3.1ï¼Œæ‰¾åˆ° getitemsresponse åŠä»¥å
+3.2ï¼Œå†åœ¨ getitemsresponse é‡Œé¢æ‰¾ featuredï¼Œå°±å‡ºç°ä¸¤å¤„ featured
+4ï¼Œè€Œä¸¤å¤„ featuredï¼Œä¸€å¤„æ˜¯ @ å‘ŠçŸ¥ featured çš„ç»“æŸé™å®šç¬¦ï¼Œä¸€å¤„å°±æ˜¯ç»“æŸé™å®šã€‚
+å¦‚æ­¤ï¼Œæ­£åˆ™è¡¨è¾¾å¼å°±å¥½å†™äº†ã€‚
 pattern = r'(?s)getitemsresponse.*?featured:(?P<mark>\d+@\d+):.*?(?P<featured>\[\"featured\".*?\"(?P=mark)\".*?\])'
 """
+
+
 class PostersSpider(scrapy.Spider):
     name = 'posters'
     allowed_domains = ['chrome.google.com']
@@ -34,7 +34,7 @@ class PostersSpider(scrapy.Spider):
         url_regex = re.compile(r'^https://lh3.googleusercontent.com')
         for w, each_ext in enumerate(featured_json[1]):
             poster = PosterItem()
-            poster['ext_id'] = each_ext[0]
+            poster['ext_code_id'] = each_ext[0]
             poster['weight'] = w + 1
             poster['image_urls'] = []
             for each_ext_detail in each_ext:

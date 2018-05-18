@@ -4,7 +4,7 @@ import json
 
 from twisted.enterprise import adbapi
 
-from .items import TagItem, PosterItem, CategoryItem, ExtensionItem
+from .items import TagItem, PosterItem, CategoryItem, ExtensionItem, TagsExtensionsItem
 
 
 # Twisted中adbapi连接池访问MySQL数据库
@@ -32,6 +32,8 @@ class MySQLAsyncPipeline:
             self.dbpool.runInteraction(self.insert_category, item)
         elif isinstance(item, ExtensionItem):
             self.dbpool.runInteraction(self.insert_ext, item)
+        elif isinstance(item, TagsExtensionsItem):
+            self.dbpool.runInteraction(self.insert_tags_exts, item)
         return item
 
     def insert_tag(self, tx, item):
@@ -44,17 +46,21 @@ class MySQLAsyncPipeline:
         sql = 'insert into tags values (null,%s,%s,%s,%s)'
         tx.execute(sql, values)
 
-    def insert_poster(self, tx, item):
-        '''
-        values = (
-            item['poster_path'],
-            item['weight'],
-            item['ext_id'],
-        )
-        sql = 'insert into posters values (null,%s,%s,%s)'
+    def insert_tags_exts(self, tx, item):
+        values = (item['tag_id'], item['ext_code_id'])
+        sql = 'insert into tags_extensions values (%s, %s)'
         tx.execute(sql, values)
-        '''
-        pass
+
+    def insert_poster(self, tx, item):
+        values = (
+            item['weight'],
+            item['ext_code_id'],
+            json.dumps(item['image_urls']),
+            json.dumps(item['images']),  # 当没有汉字时，无论list，还是jsonList，直接转成json就可以存入。
+        )
+        sql = 'insert into posters values (null,"%s","%s",\'%s\',\'%s\')'
+        exe_sql = sql % values
+        tx.execute(exe_sql)
 
     def insert_category(self, tx, item):
         if 'hot_picks' in item:

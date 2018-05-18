@@ -81,6 +81,7 @@ class MoreExtSpider(scrapy.Spider):
             url = base_url.format(ext_code_id=ext_code_id, reqid=str(reqid))
             yield scrapy.Request(url, method='POST', dont_filter=False, callback=self.parse_ext_detail)
 
+        # 一次请求无法完成时，再发后续请求
         if re.search(ext_url_regex, response.text):
             other_url_trans = response.meta.get('other_url_trans')
             page_limit = response.meta.get('page_limit')
