@@ -27,7 +27,9 @@ class CategoryItem(scrapy.Item):
     name = scrapy.Field()
     code_id = scrapy.Field()
     weight = scrapy.Field()
-    hot_picks = scrapy.Field()
+    top_picks = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
 
 
 class ExtensionItem(scrapy.Item):
@@ -36,11 +38,18 @@ class ExtensionItem(scrapy.Item):
     code_id = scrapy.Field()
     name = scrapy.Field()
     short_intro = scrapy.Field()
-    thumbnail_path = scrapy.Field()
     rank = scrapy.Field()
     download_count = scrapy.Field()
+    provider = scrapy.Field()
     free = scrapy.Field()
     top = scrapy.Field()
     detail_info = scrapy.Field()
     related_ext = scrapy.Field()
     update_time = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+
+
+class RelatedExtItem(scrapy.Item):
+    owner_code_id = scrapy.Field()
+    related_code_id = scrapy.Field()

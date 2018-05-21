@@ -23,6 +23,6 @@ ITEM_PIPELINES = {
     'extensions.pipelines.MySQLAsyncPipeline': 300,
 }
 
-# LOG_FILE = 'tmp/log.txt'
+LOG_FILE = 'tmp/log.txt'
 
 IMAGES_STORE = 'img'
