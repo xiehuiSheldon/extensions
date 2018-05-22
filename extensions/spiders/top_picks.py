@@ -28,8 +28,8 @@ class TopPicksSpider(scrapy.Spider):
 
         cat = ScrapeCategories('https://chrome.google.com/webstore/category/extensions')
         for category in cat.categories:
-            category_item = CategoryItem({k: category[k] for k in ('name', 'code_id', 'weight')})
             if category.get('top_picks_code_id'):
+                category_item = CategoryItem({k: category[k] for k in ('name', 'code_id', 'weight')})
                 category_item['top_picks'] = {
                     "info": category['second_line'][-1],
                     "title": category['second_line'][1],
@@ -52,6 +52,7 @@ class TopPicksSpider(scrapy.Spider):
                     top_picks_code_id=top_picks_code_id,
                 )
                 meta = {
+                    'category_count': 0,
                     'category_item': category_item,
                     'other_url_trans': other_url_trans,
                     'count': count,
@@ -59,24 +60,20 @@ class TopPicksSpider(scrapy.Spider):
                     'reqid': reqid,
                 }
                 yield scrapy.Request(url, method='POST', meta=meta, callback=self.parse_list)
-            else:
-                url = 'https://chrome.google.com/robots.txt'
-                meta = {'category_item': category_item}
-                yield scrapy.Request(url, meta=meta, callback=self.parse_list)
 
     def parse_list(self, response):
+        category_count = response.meta.get('category_count')
         category_item = response.meta.get('category_item')
-        if 'top_picks' not in category_item:
-            yield category_item
-            return
-        photo_regex = r'\".*?@.*?\",(\[[^\[\]]+?\])'
-        photo_detail = re.search(photo_regex, response.text).group(1)
-        if photo_detail:
-            # 获取图片URL及颜色
-            photo_detail = eval(photo_detail)
-            category_item['image_urls'] = [photo_detail[0]]
-            category_item['top_picks']['photo_color'] = photo_detail[2]
-            yield category_item
+        if category_count == 0:
+            category_count += 1
+            photo_regex = r'\".*?@.*?\",(\[[^\[\]]+?\])'
+            photo_detail = re.search(photo_regex, response.text).group(1)
+            if photo_detail:
+                # 获取图片URL及颜色
+                photo_detail = eval(photo_detail)
+                category_item['image_urls'] = [photo_detail[0]]
+                category_item['top_picks']['photo_color'] = photo_detail[2]
+                yield category_item
 
         # 2, 真正解析item
         base_url = 'https://chrome.google.com/webstore/ajax/detail?hl=zh-CN&gl=US&pv=20180301&mce=atf' \
@@ -89,7 +86,7 @@ class TopPicksSpider(scrapy.Spider):
             ext_code_id = re.split(r'/', ext[37])[-1]
             reqid = 100000 + int(random.random()*200000)
             url = base_url.format(ext_code_id=ext_code_id, reqid=str(reqid))
-            meta = {'category_id': category_item['weight']}
+            meta = {'category_id': category_item.get('weight')}
             yield scrapy.Request(url, method='POST', meta=meta, callback=self.parse_ext_detail)
 
         # 一次请求无法完成时，再发后续请求
@@ -104,6 +101,7 @@ class TopPicksSpider(scrapy.Spider):
                 reqid=reqid + 200000,
             )
             meta = {
+                'category_count': category_count,
                 'category_item': category_item,
                 'other_url_trans': other_url_trans,
                 'count': count,

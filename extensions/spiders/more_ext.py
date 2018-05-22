@@ -30,7 +30,8 @@ class MoreExtSpider(scrapy.Spider):
 
         cat = ScrapeCategories('https://chrome.google.com/webstore/category/extensions')
         for category in cat.categories:
-            if category.get('top_picks_code_id') == 'collection/top_picks_news':
+            # if category.get('top_picks_code_id') == 'collection/top_picks_news':
+            if category.get('top_picks_code_id'):
                 # 1,发送item请求
                 count = 92
                 token = 0

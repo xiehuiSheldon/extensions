@@ -44,11 +44,17 @@ class ParserDispatch:
         size = json_date[0][1][1][25]
         language = json_date[0][1][1][8]
         # 可能不存在，存在是选[35][2]，所以很不方便
-        privacy_policy = []
-        if json_date[0][1][1][35]:
-            for each in json_date[0][1][1][35]:
-                if each:
-                    privacy_policy.append(each)
+        developer_list = json_date[0][1][1][35]
+        if developer_list:
+            det = 3 - len(developer_list)
+            for _ in range(det):
+                developer_list.append(None)
+        else:
+            developer_list = [None, None, None]
+        developer_email = developer_list[0]
+        developer_addr = developer_list[1]
+        privacy_policy = developer_list[2]
+
         type_name = json_date[0][1][1][0][10]
         return {
             'detail_introduce': detail_introduce,
@@ -56,6 +62,8 @@ class ParserDispatch:
             'website': website,
             'size': size,
             'language': language,
+            'developer_email': developer_email,
+            'developer_addr': developer_addr,
             'privacy_policy': privacy_policy,
             'type_name': type_name,
         }
