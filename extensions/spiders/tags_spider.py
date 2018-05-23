@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import scrapy
 import re
 import random
@@ -72,7 +73,7 @@ class TagsSpider(scrapy.Spider):
                 code_id=code_id,
             )
             meta = {
-                'tag_id': tag['weight'],
+                'tag_id': tag.get('weight'),
                 'other_url_trans': other_url_trans,
                 'count': count,
                 'token': token,
@@ -94,10 +95,13 @@ class TagsSpider(scrapy.Spider):
             count = response.meta.get('count')
             token = response.meta.get('token')
             reqid = response.meta.get('reqid')
+            token = token + count
+            count = 96
+            reqid = reqid + 200000
             other_url = other_url_trans.format(
-                token=token + count,
-                count=96,
-                reqid=reqid + 200000,
+                token=token,
+                count=count,
+                reqid=reqid,
             )
             meta = {
                 'tag_id': tag_id,

@@ -30,8 +30,8 @@ class MoreExtSpider(scrapy.Spider):
 
         cat = ScrapeCategories('https://chrome.google.com/webstore/category/extensions')
         for category in cat.categories:
-            # if category.get('top_picks_code_id') == 'collection/top_picks_news':
-            if category.get('top_picks_code_id'):
+            if category.get('top_picks_code_id') == 'collection/top_picks_shopping':
+                # if category.get('top_picks_code_id'):
                 # 1,发送item请求
                 count = 92
                 token = 0
@@ -87,10 +87,14 @@ class MoreExtSpider(scrapy.Spider):
             count = response.meta.get('count')
             token = response.meta.get('token')
             reqid = response.meta.get('reqid')
+            # 这里出了问题啊！这里format的时候并没有改变各个参数，这里的等于号并不是给这个变量赋值，而是给字符串中变量赋值！
+            token = token + count
+            count = 96
+            reqid = reqid + 200000
             other_url = other_url_trans.format(
-                token=token + count,
-                count=96,
-                reqid=reqid + 200000,
+                token=token,
+                count=count,
+                reqid=reqid,
             )
             meta = {
                 'category_id': category_id,

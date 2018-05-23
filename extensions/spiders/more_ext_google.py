@@ -42,7 +42,6 @@ class MoreExtGoogleSpider(scrapy.Spider):
                     long_code_id=long_code_id,
                 )
                 meta = {
-                    'category_count': 0,
                     'category_item': category_item,
                     'other_url_trans': other_url_trans,
                     'count': count,
@@ -52,10 +51,14 @@ class MoreExtGoogleSpider(scrapy.Spider):
                 yield scrapy.Request(url, method='POST', meta=meta, callback=self.parse_list)
 
     def parse_list(self, response):
-        category_count = response.meta.get('category_count')
+        print("----------------parse_list执行了几次------------------")
+
         category_item = response.meta.get('category_item')
-        if category_count == 0:
-            category_count += 1
+        category_id = response.meta.get('category_id')
+        print(category_item)
+        print(category_id)
+        if category_item:
+            category_id = category_item.get('weight')
             yield category_item
         base_url = 'https://chrome.google.com/webstore/ajax/detail?hl=zh-CN&gl=US&pv=20180301&mce=atf' \
                    '%2Cpii%2Crtr%2Crlb%2Cgtc%2Chcn%2Csvp%2Cwtd%2Cnrp%2Chap%2Cnma%2Cctm%2Cac%2Chot%2Cmac' \
@@ -65,23 +68,27 @@ class MoreExtGoogleSpider(scrapy.Spider):
             ext_code_id = re.split(r'/', ext[37])[-1]
             reqid = 100000 + int(random.random() * 200000)
             url = base_url.format(ext_code_id=ext_code_id, reqid=str(reqid))
-            meta = {'category_id': category_item.get('weight')}
+            meta = {'category_id': category_id}
             yield scrapy.Request(url, method='POST', meta=meta, callback=self.parse_ext_detail)
 
         # 一次请求无法完成时，再发后续请求
         if json_data[0][1][1]:
             other_url_trans = response.meta.get('other_url_trans')
+            print(other_url_trans)
             count = response.meta.get('count')
             token = response.meta.get('token')
             reqid = response.meta.get('reqid')
+            token = token + count
+            count = 96
+            reqid = reqid + 200000
             other_url = other_url_trans.format(
-                token=token + count,
-                count=96,
-                reqid=reqid + 200000,
+                token=token,
+                count=count,
+                reqid=reqid,
             )
+            print(other_url)
             meta = {
-                'category_count': category_count,
-                'category_item': category_item,
+                'category_id': category_id,
                 'other_url_trans': other_url_trans,
                 'count': count,
                 'token': token,
